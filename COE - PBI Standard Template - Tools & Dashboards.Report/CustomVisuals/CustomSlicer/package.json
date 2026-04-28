@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0.2",
+  "author": {
+    "name": "Vishnu",
+    "email": "vishnu@innovationalofficesolution.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/CustomSlicer.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "guid": "CustomSlicer",
+    "name": "CustomSlicer",
+    "displayName": "CustomSlicer",
+    "version": "1.0.0.2",
+    "description": "Custom slicer which will display the Manufacturer by Sales of Top “N” products and categorize the rest as “Others”. This is a common need in business reporting.",
+    "supportUrl": "https://www.linkedin.com/company/ms-office-solution/",
+    "gitHubUrl": "https://github.com/Vishnu-DigIndia/",
+    "visualClassName": "Visual"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}

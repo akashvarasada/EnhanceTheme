@@ -1,0 +1,5 @@
+role SPP-SG-ALL
+	modelPermission: read
+
+	annotation PBI_Id = dd80e2945be2435c9232d0c3180cec17
+

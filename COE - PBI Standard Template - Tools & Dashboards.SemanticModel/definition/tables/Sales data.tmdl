@@ -1,0 +1,287 @@
+table 'Sales data'
+	lineageTag: 83e761fa-fc5c-4cb5-b7a1-43acfedef152
+
+	measure Costs/Sales =
+			
+			DIVIDE(SUM('Sales data'[COGS]), SUM('Sales data'[ Sales]))
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d4e8f76d-b8f8-44b5-9920-b137bd80d9bd
+
+		changedProperty = FormatString
+
+	measure 'Net Margin' =
+			
+			DIVIDE([Sales-Costs], SUM('Sales data'[ Sales]))
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 25eba904-aa88-41c4-aadb-34a2d06f6f38
+
+		changedProperty = FormatString
+
+	measure Sales-Costs =
+			
+			SUM('Sales data'[ Sales]) - SUM('Sales data'[COGS])
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: ff43bcd9-4e4f-4f2b-903d-a8ef630f3daf
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Avg Sales by Country' =
+			
+			AVERAGEX(
+				KEEPFILTERS(VALUES('Sales data'[Country])),
+				CALCULATE(SUM('Sales data'[ Sales]))
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: cc44e43b-d638-42bb-b05c-d94a7a984d8c
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Avg Sales by Product' =
+			
+			AVERAGEX(
+				KEEPFILTERS(VALUES('Sales data'[Product])),
+				CALCULATE(SUM('Sales data'[ Sales]))
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: cbc6d9c0-1a24-4722-819c-96696fc2f329
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Segment
+		dataType: string
+		lineageTag: b105473f-9dd1-4ef2-ba7b-c07b1f39f4e6
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 6ad02869-4cc5-41b9-9340-0346d97679ab
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		lineageTag: 4c81ead1-5bce-4d2c-9955-03b065fb6bbb
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Discount Band'
+		dataType: string
+		lineageTag: 30fa8c25-1b5f-45d7-8e59-21d69dbe31f1
+		summarizeBy: none
+		sourceColumn: Discount Band
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Units Sold'
+		dataType: double
+		lineageTag: 96309702-e9dc-4f7e-8501-bdebbab45ad3
+		summarizeBy: sum
+		sourceColumn: Units Sold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Manufacturing Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a24447e-4908-4728-ba1d-6aa4e1c6664f
+		summarizeBy: sum
+		sourceColumn: Manufacturing Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sale Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 19cf8440-bdb4-4ffa-b05f-bb92481db9ce
+		summarizeBy: sum
+		sourceColumn: Sale Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gross Sales'
+		dataType: double
+		lineageTag: d5022b0f-0a11-44d8-a51c-4521038ee109
+		summarizeBy: sum
+		sourceColumn: Gross Sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Discounts
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: b43cbd2e-de01-4d92-8d0b-cee1d425fec4
+		summarizeBy: sum
+		sourceColumn: Discounts
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Discount%
+		dataType: double
+		lineageTag: 238d5ec3-676b-469d-8c2f-5664d67b61ed
+		summarizeBy: sum
+		sourceColumn: Discount%
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ' Sales'
+		dataType: decimal
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 3eb57edc-0ce4-40c8-9e3e-2c6e27fad10c
+		summarizeBy: sum
+		sourceColumn: " Sales"
+
+		annotation SummarizationSetBy = Automatic
+
+	column COGS
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 156a9913-368e-4ae7-af87-9cc87a567431
+		summarizeBy: sum
+		sourceColumn: COGS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Profit
+		dataType: decimal
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9776de8d-8e52-423e-829f-a6acb74402c0
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 66dc4636-69e0-47a0-9d6d-545e49ad90e1
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 5acb5920-baa9-406b-bfa8-722bd15cd8f6
+			defaultHierarchy: LocalDateTable_18d4a316-a693-403f-99b5-98b1625a2009.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Month Number'
+		dataType: string
+		lineageTag: 47930882-f6a4-4125-8a22-ec2bb750d3e0
+		summarizeBy: none
+		sourceColumn: Month Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		dataType: string
+		lineageTag: ecbe685a-5cc2-448e-a828-32b387b3ebe6
+		summarizeBy: none
+		sourceColumn: Month Name
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Sales data","TableItemName":"Quarters","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column Year
+		dataType: string
+		lineageTag: 0af7b88a-3c77-446b-a3c4-8eb6aa0c36a6
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarters =
+			SWITCH(
+			  TRUE,
+			  ISBLANK('Sales data'[Month Name]),
+			  "(Blank)",
+			  'Sales data'[Month Name] IN {"February",
+			    "January",
+			    "March"},
+			  "Q1",
+			  'Sales data'[Month Name] IN {"April",
+			    "June",
+			    "May"},
+			  "Q2",
+			  'Sales data'[Month Name] IN {"August",
+			    "July",
+			    "September"},
+			  "Q3",
+			  'Sales data'[Month Name] IN {"December",
+			    "November",
+			    "October"},
+			  "Q4",
+			  'Sales data'[Month Name]
+			)
+		lineageTag: 685d9627-7b70-4c55-8865-21382f93d5bf
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Sales data"
+				          }
+				        },
+				        "Property": "Month Name"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"s","Entity":"Sales data"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"s"}},"Property":"Month Name"}}],"GroupItems":[{"DisplayName":"(Blank)","BlankDefaultPlaceholder":true},{"DisplayName":"Q1","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"s"}},"Property":"Month Name"}}],"Values":[[{"Literal":{"Value":"'February'"}}],[{"Literal":{"Value":"'January'"}}],[{"Literal":{"Value":"'March'"}}]]}}},{"DisplayName":"Q2","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"s"}},"Property":"Month Name"}}],"Values":[[{"Literal":{"Value":"'April'"}}],[{"Literal":{"Value":"'June'"}}],[{"Literal":{"Value":"'May'"}}]]}}},{"DisplayName":"Q3","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"s"}},"Property":"Month Name"}}],"Values":[[{"Literal":{"Value":"'August'"}}],[{"Literal":{"Value":"'July'"}}],[{"Literal":{"Value":"'September'"}}]]}}},{"DisplayName":"Q4","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"s"}},"Property":"Month Name"}}],"Values":[[{"Literal":{"Value":"'December'"}}],[{"Literal":{"Value":"'November'"}}],[{"Literal":{"Value":"'October'"}}]]}}}]}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contact Us' = "mailto:SalesEx.Analytics@accenture.com"
+		lineageTag: a4413f99-b6ff-455d-8320-72c7b504da00
+		dataCategory: WebUrl
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sales data-768aab14-aca7-4386-8320-7460800474a9' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\ignacio.fronza\Documents\S&PP Analytics\Power BI\Accenture - S&PP COE Analytics - Enablement PBI Test -Geographic Customer Sample.xlsx"), null, true),
+				    #"Sales data_Sheet" = Source{[Item="Sales data",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Sales data_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Segment", type text}, {"Country", type text}, {"Product", type text}, {"Discount Band", type text}, {"Units Sold", type number}, {"Manufacturing Price", Int64.Type}, {"Sale Price", Int64.Type}, {"Gross Sales", type number}, {"Discounts", type number}, {"Discount%", type number}, {" Sales", type number}, {"COGS", type number}, {"Profit", type number}, {"Date", type date}, {"Month Number", Int64.Type}, {"Month Name", type text}, {"Year", Int64.Type}, {"Column18", type any}, {"Column19", type any}, {"Column20", type any}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","U.S.A.","US",Replacer.ReplaceText,{"Country"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","USA","US",Replacer.ReplaceText,{"Country"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","United States of America","US",Replacer.ReplaceText,{"Country"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value2",{{"Discounts", Currency.Type}, {"Discount%", Percentage.Type}, {"Profit", Currency.Type}, {"COGS", Currency.Type}, {" Sales", Currency.Type}, {"Month Number", type text}, {"Year", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type1",{"Column18", "Column19", "Column20"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

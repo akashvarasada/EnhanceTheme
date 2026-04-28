@@ -1,0 +1,165 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.2.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY24SU10",
+      "reportVersionAtImport": {
+        "visual": "1.8.96",
+        "report": "2.0.96",
+        "page": "1.3.96"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "CY24SU109372283944209873.json",
+      "reportVersionAtImport": {
+        "visual": "2.7.0",
+        "report": "3.2.0",
+        "page": "2.3.1"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "filterConfig": {
+    "filterSortOrder": "Custom"
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "visible": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "AsterPlot1443303142064",
+    "ChicletSlicer1448559807354",
+    "HierarchySlicer1458836712039",
+    "KPIStatusWithHistory1446562283967",
+    "pivotSlicer41E30F8C22FE4E32A8D40848A54322CF"
+  ],
+  "resourcePackages": [
+    {
+      "name": "CardBrowser8D7CFFDA2E7E400C9474F41B9EDBBA58",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "CardBrowser8D7CFFDA2E7E400C9474F41B9EDBBA58.pbiviz.json",
+          "path": "CardBrowser8D7CFFDA2E7E400C9474F41B9EDBBA58.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "comicgen1058F16C30B888F41E2AE146D059FD5ACEE",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "comicgen1058F16C30B888F41E2AE146D059FD5ACEE.pbiviz.json",
+          "path": "comicgen1058F16C30B888F41E2AE146D059FD5ACEE.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "CustomSlicer",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "CustomSlicer.pbiviz.json",
+          "path": "CustomSlicer.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "enlightenDataStoryDDFB78A6143E42CFAFBC50CCF18D978D",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "enlightenDataStoryDDFB78A6143E42CFAFBC50CCF18D978D.pbiviz.json",
+          "path": "enlightenDataStoryDDFB78A6143E42CFAFBC50CCF18D978D.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "hierarchy50DB3783432B40A69C0B91926CE74CD9",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "hierarchy50DB3783432B40A69C0B91926CE74CD9.pbiviz.json",
+          "path": "hierarchy50DB3783432B40A69C0B91926CE74CD9.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "Sunburst1445472000808",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "Sunburst1445472000808.pbiviz.json",
+          "path": "Sunburst1445472000808.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "CY24SU109372283944209873.json",
+          "path": "CY24SU109372283944209873.json",
+          "type": "CustomTheme"
+        }
+      ]
+    },
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY24SU10",
+          "path": "BaseThemes/CY24SU10.json",
+          "type": "BaseTheme"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true
+  }
+}

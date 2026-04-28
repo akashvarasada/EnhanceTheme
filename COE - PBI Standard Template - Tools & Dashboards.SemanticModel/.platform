@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "COE - PBI Standard Template - Tools & Dashboards"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "79cd9e50-c7b9-41d9-a871-bc040725ed07"
+  }
+}

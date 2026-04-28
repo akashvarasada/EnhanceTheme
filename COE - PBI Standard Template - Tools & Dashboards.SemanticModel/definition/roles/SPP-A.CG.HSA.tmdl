@@ -1,0 +1,5 @@
+role 'SPP-A.CG.HSA'
+	modelPermission: read
+
+	annotation PBI_Id = 466e9ea5b7984b71ba5ee05b11b11e8a
+

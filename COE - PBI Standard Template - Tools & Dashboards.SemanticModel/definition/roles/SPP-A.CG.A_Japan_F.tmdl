@@ -1,0 +1,5 @@
+role 'SPP-A.CG.A_Japan_F'
+	modelPermission: read
+
+	annotation PBI_Id = b1aa0ca6c75a40ae95f282904380b873
+

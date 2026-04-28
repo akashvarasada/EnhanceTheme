@@ -1,0 +1,5 @@
+role 'SPP-A.CG.E_ASGR_C'
+	modelPermission: read
+
+	annotation PBI_Id = 0b4417cc09c141ba8d54fe8d571186c8
+

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "413c965b54d4ca6cfe80",
+  "displayName": "Sample Visuals",
+  "displayOption": "ActualSize",
+  "height": 5000,
+  "width": 5000
+}

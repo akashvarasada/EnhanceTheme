@@ -1,0 +1,5 @@
+role 'SPP-A.CG.A_India_H'
+	modelPermission: read
+
+	annotation PBI_Id = edd183c1c818402392a54dcb9cae8687
+

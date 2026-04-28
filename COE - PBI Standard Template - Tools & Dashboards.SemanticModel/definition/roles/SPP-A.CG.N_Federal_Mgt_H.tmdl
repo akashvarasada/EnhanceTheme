@@ -1,0 +1,5 @@
+role 'SPP-A.CG.N_Federal_Mgt_H'
+	modelPermission: read
+
+	annotation PBI_Id = 9c164b2eef974f83a007c4fb8a18b11e
+

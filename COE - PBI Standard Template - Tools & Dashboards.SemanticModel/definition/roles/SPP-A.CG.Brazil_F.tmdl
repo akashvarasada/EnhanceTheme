@@ -1,0 +1,5 @@
+role 'SPP-A.CG.Brazil_F'
+	modelPermission: read
+
+	annotation PBI_Id = 08ea9df74dd74d8bb90a0fba59cb3c1d
+

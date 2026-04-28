@@ -1,0 +1,5 @@
+role 'SPP-A.CG.E_Iberia_H'
+	modelPermission: read
+
+	annotation PBI_Id = d2722defd81e492d84d8b4be2a78a59c
+

@@ -1,0 +1,5 @@
+role 'SPP-A.CG.N_Northeast_F'
+	modelPermission: read
+
+	annotation PBI_Id = 38ef013c01784e408847749f8216568d
+

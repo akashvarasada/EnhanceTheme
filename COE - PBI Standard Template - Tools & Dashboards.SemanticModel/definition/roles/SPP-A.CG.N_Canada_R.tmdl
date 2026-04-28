@@ -1,0 +1,5 @@
+role 'SPP-A.CG.N_Canada_R'
+	modelPermission: read
+
+	annotation PBI_Id = 852898ec94b2471785e9e9a8a2a8f233
+

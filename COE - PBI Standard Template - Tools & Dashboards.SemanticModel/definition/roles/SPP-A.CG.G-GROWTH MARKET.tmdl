@@ -1,0 +1,5 @@
+role 'SPP-A.CG.G-GROWTH MARKET'
+	modelPermission: read
+
+	annotation PBI_Id = 0eb686b8118a4e0aa7f74d7dcde40970
+

@@ -1,0 +1,5 @@
+role 'SPP-A.CG.A_SEA_R'
+	modelPermission: read
+
+	annotation PBI_Id = 7a94cd865ec04975aaec207e6b84eb46
+

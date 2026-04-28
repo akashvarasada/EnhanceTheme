@@ -1,0 +1,5 @@
+role 'SPP-A.CG.N_MARKET_NA'
+	modelPermission: read
+
+	annotation PBI_Id = ca97f0876c3e466d8b5af2b3edbc8f4a
+
